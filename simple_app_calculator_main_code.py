@@ -1,3 +1,7 @@
+print("-" * 40)
+print("\033[031m         SIMPLE APP CALCULATOR\033[0m")
+print("-" * 40)
+
 # simple maangas calculator app
 while True:
 # show menu (add, subtract, multiply, divide)
