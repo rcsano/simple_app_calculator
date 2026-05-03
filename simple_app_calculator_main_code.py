@@ -3,6 +3,9 @@ print("-" * 40)
 print("\033[031m         SIMPLE APP CALCULATOR\033[0m")
 print("-" * 40)
 
+class InvalidOperationError(Exception):
+    pass
+
 def add(a, b):
     return a + b
 
