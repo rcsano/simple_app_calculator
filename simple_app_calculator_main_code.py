@@ -6,17 +6,18 @@ print("-" * 40)
 class InvalidOperationError(Exception):
     pass
 
-def add(a, b):
-    return a + b
+class ArithmeticOperations:
+    def add(self, num_1, num_2):
+        return num_1 + num_2
 
-def subtract(a, b):
-    return a - b
+    def subtract(self, num_1, num_2):
+        return num_1 - num_2
 
-def multiply(a, b):
-    return a * b
+    def multiply(self, num_1, num_2):
+        return num_1 * num_2
 
-def divide(a, b):
-    return a / b
+    def divide(self, num_1, num_2):
+        return num_1 / num_2
 
 while True:
     try:
@@ -27,14 +28,16 @@ while True:
         num_1 = float(input("Enter first number: "))
         num_2 = float(input("Enter second number: "))
 
+        math_operations = ArithmeticOperations
+
         if user_choice == "1":
-            result = add(num_1, num_2)
+            result = math_operations.add(num_1, num_2)
         elif user_choice == "2":
-            result = subtract(num_1, num_2)
+            result = math_operations.subtract(num_1, num_2)
         elif user_choice == "3":
-            result = multiply(num_1, num_2)
+            result = math_operations.multiply(num_1, num_2)
         elif user_choice == "4":
-            result = divide(num_1, num_2)
+            result = math_operations.divide(num_1, num_2)
 
         print("Result:", result)
 
