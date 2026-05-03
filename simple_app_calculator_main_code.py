@@ -24,17 +24,17 @@ while True:
 
         user_choice = input("Choose (1-4): ")
 
-        first_num = float(input("Enter first number: "))
-        second_num = float(input("Enter second number: "))
+        num_1 = float(input("Enter first number: "))
+        num_2 = float(input("Enter second number: "))
 
         if user_choice == "1":
-            result = first_num + second_num
+            result = add(num_1, num_2)
         elif user_choice == "2":
-            result = first_num - second_num
+            result = subtract(num_1, num_2)
         elif user_choice == "3":
-            result = first_num * second_num
+            result = multiply(num_1, num_2)
         elif user_choice == "4":
-            result = first_num / second_num
+            result = divide(num_1, num_2)
 
         print("Result:", result)
 
