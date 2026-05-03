@@ -28,7 +28,7 @@ while True:
         num_1 = float(input("Enter first number: "))
         num_2 = float(input("Enter second number: "))
 
-        math_operations = ArithmeticOperations
+        math_operations = ArithmeticOperations()
 
         if user_choice == "1":
             result = math_operations.add(num_1, num_2)
