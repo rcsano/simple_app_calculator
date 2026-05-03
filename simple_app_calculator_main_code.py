@@ -3,6 +3,18 @@ print("-" * 40)
 print("\033[031m         SIMPLE APP CALCULATOR\033[0m")
 print("-" * 40)
 
+def add(a, b):
+    return a + b
+
+def subtract(a, b):
+    return a - b
+
+def multiply(a, b):
+    return a * b
+
+def divide(a, b):
+    return a / b
+
 while True:
     try:
         print("\n[1] Addition\n[2] Subtraction\n[3] Multiplication\n[4] Division")
