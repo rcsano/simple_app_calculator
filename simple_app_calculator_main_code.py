@@ -22,7 +22,6 @@ class ArithmeticOperations:
 class CalculatorMaangasApp(ArithmeticOperations):
 
     def execute_calculation(self):
-
         print("\n[1] Addition\n[2] Subtraction\n[3] Multiplication\n[4] Division")
 
         user_choice = input("PLease choose an operation (1-4): ")
@@ -46,7 +45,9 @@ class CalculatorMaangasApp(ArithmeticOperations):
 
     def run(self):
 
-        while True:
+        is_running = True
+
+        while is_running:
             try:
                 self.execute_calculation()
 
@@ -62,10 +63,11 @@ class CalculatorMaangasApp(ArithmeticOperations):
             except Exception as unexpected_error:
                 print("Error:", unexpected_error)
 
-            retry = input("Try again? (y/n): ")
+            retry = input("Try again? (y/n): ").strip().lower()
+
             if retry != 'y':
                 print("Thank you!")
-                break
+                is_running = False
 
 if __name__ == '__main__':
     calculator_app = CalculatorMaangasApp()
