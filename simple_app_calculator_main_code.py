@@ -4,8 +4,10 @@ print("-" * 40)
 print(f"\033[031m{title.center(40)}\033[0m")
 print("-" * 40)
 
+
 class InvalidOperationError(Exception):
     pass
+
 
 class ArithmeticOperations:
     def add(self, num_1, num_2):
@@ -20,13 +22,13 @@ class ArithmeticOperations:
     def divide(self, num_1, num_2):
         return num_1 / num_2
 
+
 class CalculatorMaangasApp(ArithmeticOperations):
     def execute_calculation(self):
         print("\n[1] Addition"
               "\n[2] Subtraction"
               "\n[3] Multiplication"
               "\n[4] Division")
-
 
         user_choice = input("Please choose an operation (1-4): ")
 
@@ -44,7 +46,6 @@ class CalculatorMaangasApp(ArithmeticOperations):
         }
 
         result = operations_dictionary[user_choice](num_1, num_2)
-
         print(f"Result: {result:.2f}")
 
     def run(self):
@@ -71,6 +72,7 @@ class CalculatorMaangasApp(ArithmeticOperations):
             if retry != 'y':
                 print("\nThank you for using the Maangas Calculator. See you next time!")
                 is_running = False
+
 
 if __name__ == '__main__':
     calculator_app = CalculatorMaangasApp()
