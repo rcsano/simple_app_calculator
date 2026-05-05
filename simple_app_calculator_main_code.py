@@ -27,20 +27,20 @@ while True:
 
         if user_choice not in ("1", "2", "3", "4"):
             raise InvalidOperationError("Invalid choice")
-        
+
         num_1 = float(input("Enter first number: "))
         num_2 = float(input("Enter second number: "))
 
         math_operations = ArithmeticOperations()
 
-        if user_choice == "1":
-            result = math_operations.add(num_1, num_2)
-        elif user_choice == "2":
-            result = math_operations.subtract(num_1, num_2)
-        elif user_choice == "3":
-            result = math_operations.multiply(num_1, num_2)
-        elif user_choice == "4":
-            result = math_operations.divide(num_1, num_2)
+        operations_dictionary = {
+            "1": math_operations.add,
+            "2": math_operations.subtract,
+            "3": math_operations.multiply,
+            "4": math_operations.divide
+        }
+
+        result = math_operations[user_choice](num_1, num_2)
 
         print("Result:", result)
 
