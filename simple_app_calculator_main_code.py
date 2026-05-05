@@ -22,15 +22,16 @@ class ArithmeticOperations:
 class CalculatorMaangasApp(ArithmeticOperations):
 
     def execute_calculation(self):
+
         print("\n[1] Addition\n[2] Subtraction\n[3] Multiplication\n[4] Division")
 
-        user_choice = input("Choose (1-4): ")
+        user_choice = input("PLease choose an operation (1-4): ")
 
         if user_choice not in ("1", "2", "3", "4"):
             raise InvalidOperationError("Invalid choice")
 
-        num_1 = float(input("Enter first number: "))
-        num_2 = float(input("Enter second number: "))
+        num_1 = float(input("Enter the first number: "))
+        num_2 = float(input("Enter the second number: "))
 
         operations_dictionary = {
             "1": self.add,
