@@ -55,6 +55,9 @@ class CalculatorMaangasApp(ArithmeticOperations):
             except ZeroDivisionError:
                 print("Cannot divide by zero.")
 
+            except InvalidOperationError as error_message:
+                print("Error:", error_message)
+
             except Exception as unexpected_error:
                 print("Error:", unexpected_error)
 
