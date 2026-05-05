@@ -21,35 +21,40 @@ class ArithmeticOperations:
 
 class CalculatorMaangasApp(ArithmeticOperations):
 
+    def execute_calculation(self):
+        print("\n[1] Addition\n[2] Subtraction\n[3] Multiplication\n[4] Division")
+
+        user_choice = input("Choose (1-4): ")
+
+        if user_choice not in ("1", "2", "3", "4"):
+            raise InvalidOperationError("Invalid choice")
+
+        num_1 = float(input("Enter first number: "))
+        num_2 = float(input("Enter second number: "))
+
+        operations_dictionary = {
+            "1": self.add,
+            "2": self.subtract,
+            "3": self.multiply,
+            "4": self.divide
+        }
+
+        result = operations_dictionary[user_choice](num_1, num_2)
+
+        print("Result:", result)
+
     def run(self):
 
         while True:
             try:
-                print("\n[1] Addition\n[2] Subtraction\n[3] Multiplication\n[4] Division")
-
-                user_choice = input("Choose (1-4): ")
-
-                if user_choice not in ("1", "2", "3", "4"):
-                    raise InvalidOperationError("Invalid choice")
-
-                num_1 = float(input("Enter first number: "))
-                num_2 = float(input("Enter second number: "))
-
-                operations_dictionary = {
-                    "1": self.add,
-                    "2": self.subtract,
-                    "3": self.multiply,
-                    "4": self.divide
-                }
-
-                result = operations_dictionary[user_choice](num_1, num_2)
-
-                print("Result:", result)
+                self.execute_calculation()
 
             except ValueError:
                 print("Invalid input. Numbers only. Please try again.")
+
             except ZeroDivisionError:
                 print("Cannot divide by zero.")
+
             except Exception as unexpected_error:
                 print("Error:", unexpected_error)
 
@@ -58,5 +63,6 @@ class CalculatorMaangasApp(ArithmeticOperations):
                 print("Thank you!")
                 break
 
-calculator_app = CalculatorMaangasApp()
-calculator_app.run()
+if __name__ == '__main__':
+    calculator_app = CalculatorMaangasApp()
+    calculator_app.run()
