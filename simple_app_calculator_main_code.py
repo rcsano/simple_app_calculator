@@ -41,7 +41,7 @@ class CalculatorMaangasApp(ArithmeticOperations):
 
         result = operations_dictionary[user_choice](num_1, num_2)
 
-        print("Result:", result)
+        print(f"Result: {result:.2f}")
 
     def run(self):
 
