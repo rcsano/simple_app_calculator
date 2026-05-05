@@ -41,6 +41,10 @@ while True:
 
         print("Result:", result)
 
+    except ValueError:
+        print("Invalid input. Numbers only. Please try again.")
+    except ZeroDivisionError:
+        print("Cannot divide by zero.")
     except Exception as unexpected_error:
         print("Error:", unexpected_error)
 
