@@ -19,41 +19,44 @@ class ArithmeticOperations:
     def divide(self, num_1, num_2):
         return num_1 / num_2
 
-while True:
-    try:
-        print("\n[1] Addition\n[2] Subtraction\n[3] Multiplication\n[4] Division")
+class CalculatorMaangasApp(ArithmeticOperations):
 
-        user_choice = input("Choose (1-4): ")
+    def run(self):
 
-        if user_choice not in ("1", "2", "3", "4"):
-            raise InvalidOperationError("Invalid choice")
+        while True:
+            try:
+                print("\n[1] Addition\n[2] Subtraction\n[3] Multiplication\n[4] Division")
 
-        num_1 = float(input("Enter first number: "))
-        num_2 = float(input("Enter second number: "))
+                user_choice = input("Choose (1-4): ")
 
-        math_operations = ArithmeticOperations()
+                if user_choice not in ("1", "2", "3", "4"):
+                    raise InvalidOperationError("Invalid choice")
 
-        operations_dictionary = {
-            "1": math_operations.add,
-            "2": math_operations.subtract,
-            "3": math_operations.multiply,
-            "4": math_operations.divide
-        }
+                num_1 = float(input("Enter first number: "))
+                num_2 = float(input("Enter second number: "))
 
-        result = math_operations[user_choice](num_1, num_2)
+                operations_dictionary = {
+                    "1": self.add,
+                    "2": self.subtract,
+                    "3": self.multiply,
+                    "4": self.divide
+                }
 
-        print("Result:", result)
+                result = operations_dictionary[user_choice](num_1, num_2)
 
-    except ValueError:
-        print("Invalid input. Numbers only. Please try again.")
-    except ZeroDivisionError:
-        print("Cannot divide by zero.")
-    except Exception as unexpected_error:
-        print("Error:", unexpected_error)
+                print("Result:", result)
 
-    retry = input("Try again? (y/n): ")
-    if retry != 'y':
-        print("Thank you!")
-        break
+            except ValueError:
+                print("Invalid input. Numbers only. Please try again.")
+            except ZeroDivisionError:
+                print("Cannot divide by zero.")
+            except Exception as unexpected_error:
+                print("Error:", unexpected_error)
 
+            retry = input("Try again? (y/n): ")
+            if retry != 'y':
+                print("Thank you!")
+                break
 
+calculator_app = CalculatorMaangasApp()
+calculator_app.run()
