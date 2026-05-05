@@ -1,6 +1,7 @@
 
+title = "SIMPLE APP CALCULATOR"
 print("-" * 40)
-print("\033[031m         SIMPLE APP CALCULATOR\033[0m")
+print(f"\033[031m{title.center(40)}\033[0m")
 print("-" * 40)
 
 class InvalidOperationError(Exception):
@@ -20,11 +21,14 @@ class ArithmeticOperations:
         return num_1 / num_2
 
 class CalculatorMaangasApp(ArithmeticOperations):
-
     def execute_calculation(self):
-        print("\n[1] Addition\n[2] Subtraction\n[3] Multiplication\n[4] Division")
+        print("\n[1] Addition"
+              "\n[2] Subtraction"
+              "\n[3] Multiplication"
+              "\n[4] Division")
 
-        user_choice = input("PLease choose an operation (1-4): ")
+
+        user_choice = input("Please choose an operation (1-4): ")
 
         if user_choice not in ("1", "2", "3", "4"):
             raise InvalidOperationError("Invalid choice")
@@ -44,7 +48,6 @@ class CalculatorMaangasApp(ArithmeticOperations):
         print(f"Result: {result:.2f}")
 
     def run(self):
-
         is_running = True
 
         while is_running:
@@ -66,7 +69,7 @@ class CalculatorMaangasApp(ArithmeticOperations):
             retry = input("Try again? (y/n): ").strip().lower()
 
             if retry != 'y':
-                print("Thank you!")
+                print("\nThank you for using the Maangas Calculator. See you next time!")
                 is_running = False
 
 if __name__ == '__main__':
