@@ -25,6 +25,9 @@ while True:
 
         user_choice = input("Choose (1-4): ")
 
+        if user_choice not in ("1", "2", "3", "4"):
+            raise InvalidOperationError("Invalid choice")
+        
         num_1 = float(input("Enter first number: "))
         num_2 = float(input("Enter second number: "))
 
